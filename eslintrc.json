@@ -1,0 +1,47 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": ["airbnb-typescript-prettier", "plugin:storybook/recommended"],
+    "ignorePatterns": [
+        "!**/*",
+        ".storybook/*",
+        "src/**/*.test.tsx",
+        "src/**/*.stories.tsx"
+    ],
+    "parserOptions": {
+        "project": ["./tsconfig.json"]
+    },
+    "rules": {
+        "react/require-default-props": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "no-restricted-exports": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "react/no-unstable-nested-components": "off",
+        "react/jsx-no-useless-fragment": "off",
+        "react/no-array-index-key": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "no-param-reassign": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "no-unused-expressions": "off",
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "no-async-promise-executor": "off",
+        "no-promise-executor-return": "off",
+        "consistent-return": "off",
+        "import/no-cycle": "off",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "no-case-declarations": "off",
+        "no-underscore-dangle": "off",
+        "no-nested-ternary": "off",
+        "react/destructuring-assignment": "warn",
+        "prefer-promise-reject-errors": "warn",
+        "react/function-component-definition": "off",
+        "dot-notation": "off",
+        "operator-assignment": "warn"
+    }
+}
