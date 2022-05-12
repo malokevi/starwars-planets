@@ -1,37 +1,34 @@
 import { useEffect, useState } from "react"
 
-// todo - fix type
 const useAudio = (
-  url: any
+    url: any
 ): {
-  playing: any
-  muted: any
-  toggle: any
-  mute: any
+    toggle: any
+    mute: any
 } => {
-  const [audio] = useState(new Audio(url))
-  const [playing, setPlaying] = useState(false)
-  const [muted, setMuted] = useState(false)
+    const [audio] = useState(new Audio(url))
+    const [playing, setPlaying] = useState(false)
+    const [muted, setMuted] = useState(false)
 
-  const toggle = () => setPlaying(!playing)
-  const mute = () => setMuted(!muted)
+    const toggle = () => setPlaying(!playing)
+    const mute = () => setMuted(!muted)
 
-  useEffect(() => {
-    playing ? audio.play() : audio.pause()
-  }, [playing])
+    useEffect(() => {
+        playing ? audio.play() : audio.pause()
+    }, [playing])
 
-  useEffect(() => {
-    audio.muted = muted
-  }, [muted])
+    useEffect(() => {
+        audio.muted = muted
+    }, [muted])
 
-  useEffect(() => {
-    audio.addEventListener("ended", () => setPlaying(false))
-    return () => {
-      audio.removeEventListener("ended", () => setPlaying(false))
-    }
-  }, [])
+    useEffect(() => {
+        audio.addEventListener("ended", () => setPlaying(false))
+        return () => {
+            audio.removeEventListener("ended", () => setPlaying(false))
+        }
+    }, [])
 
-  return { playing, muted, toggle, mute }
+    return { toggle, mute }
 }
 
 export default useAudio

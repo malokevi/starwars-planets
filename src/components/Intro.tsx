@@ -20,7 +20,7 @@ const preload = async (imgs: string[]) => {
 const Intro = React.memo(() => {
     const [phase, setPhase] = useState(0)
     const dispatch = useAppDispatch()
-    const { mute, muted, toggle, playing } = useAudio(CrawlAudio)
+    const { mute, toggle } = useAudio(CrawlAudio)
 
     useEffect(() => {
         // preload images into cache to prevent delays

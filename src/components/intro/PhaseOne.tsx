@@ -34,6 +34,10 @@ const StyledPhaseOne = styled.div`
         color: #2db5d3;
         margin: auto;
         font-size: 52px;
+
+        @media (max-width: 1200px) {
+            font-size: 42px;
+        }
     }
 `
 
