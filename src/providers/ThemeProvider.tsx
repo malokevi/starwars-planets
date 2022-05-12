@@ -30,7 +30,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
                       ...lightTheme
                   }
         )
-    }, [darkMode])
+    }, [darkMode, planetPan])
 
     return (
         <StyledComponentsThemeProvider theme={activeTheme}>
