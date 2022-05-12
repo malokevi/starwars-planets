@@ -35,7 +35,6 @@ const Intro = React.memo(() => {
     }, [phase])
 
     const RenderPhase = useCallback(() => {
-        console.log("phase?", phase)
         switch (phase) {
             case 0:
                 return <PhaseZero setPhase={setPhase} />
@@ -178,6 +177,8 @@ const PhaseThree = ({
                 }}
                 onAnimationComplete={() => setPhase(4)}
             >
+                <h1>Episode 1: The Phantom Menace</h1>
+                <h2>Episode 1: The Phantom Menace</h2>
                 <p>
                     Sed ut perspiciatis unde omnis iste natus error sit
                     voluptatem accusantium doloremque laudantium, totam rem
@@ -264,7 +265,7 @@ const StyledPhaseThree = styled.div`
     justify-content: center;
     position: relative;
     color: #feda4a;
-    font-family: "Pathway Gothic One", sans-serif;
+    font-family: "LibreFranklin", sans-serif;
     font-size: 500%;
     font-weight: 600;
     height: 400px;
@@ -280,6 +281,16 @@ const StyledPhaseThree = styled.div`
         top: 9999999999px;
         transform-origin: 50% 100%;
         width: 160%;
+
+        h1 {
+            font-size: 100px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 60px;
+            text-align: center;
+        }
 
         p {
             font-size: 100px;

@@ -46,6 +46,7 @@ const globalStyles = createGlobalStyle`
         display: flex;
         flex-flow: column nowrap;
         background-color: black;
+        overflow-y: scroll;
     }
 
     body {
@@ -81,6 +82,10 @@ const globalStyles = createGlobalStyle`
 
         .shadow {
             box-shadow: 0 8px 12px ${({ theme }) => theme.colors.boxShadow};
+        }
+
+        input, select {
+            font-family: "Poppins", arial, serif;
         }
 
         button {

@@ -14,7 +14,7 @@ const defaultTheme: DefaultTheme = {
         xxl: "38px"
     },
     padding: {
-        gap: "80px",
+        gap: "60px",
         page: "120px"
     },
     borderRadius: "8px",

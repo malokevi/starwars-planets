@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import Card from "../../components/utilities/Card"
 import { staggerChildren } from "../../theme/motion-variants"
 
-type PlanetType = {
+export type PlanetType = {
     residents: string[]
     terrain: string
     name: string
@@ -35,9 +35,8 @@ const PlanetGrid = ({ planets }: PlanetGridProps) => {
                         <Card
                             className="planet-card shadow"
                             key={`planetcard-${name}`}
+                            title={name}
                         >
-                            <h2>{name}</h2>
-
                             <div className="planet-statistics">
                                 <div>
                                     <p>Terrain</p>
@@ -66,17 +65,11 @@ const PlanetGrid = ({ planets }: PlanetGridProps) => {
 
 const StyledPlanetGrid = styled(motion.div)`
     .planet-card {
-        color: white;
-
-        h2 {
-            margin: 0 0 24px;
-            color: ${({ theme }) => theme.colors.yellow};
-        }
-
         .planet-statistics {
             display: flex;
             flex-flow: column nowrap;
             gap: 18px;
+            color: white;
 
             & > div {
                 display: flex;
