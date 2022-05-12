@@ -16,7 +16,8 @@ const darkTheme: ColorScheme = {
         white: "#fff",
         yellow: "#ecda3d",
         boxShadow: "rgb(0 0 0 / 33%)",
-        primary: "#2d2d2d"
+        primary: "#2d2d2d",
+        secondary: "#1a1a1a"
     }
 }
 

@@ -3,8 +3,8 @@ import { ColorScheme } from "styled-components"
 const LightTheme: ColorScheme = {
     colors: {
         text: {
-            hard: "#131c4b",
-            faded: "#abadbc"
+            hard: "#2d2d2d",
+            faded: "gray"
         },
         button: {
             primary: "#70cddd",
@@ -12,11 +12,12 @@ const LightTheme: ColorScheme = {
             warning: "#c1282d",
             danger: ""
         },
-        gray: "#eee",
+        gray: "#e9e9e9",
         white: "#fff",
         yellow: "#ecda3d",
         boxShadow: "rgb(0 0 0 / 8%)",
-        primary: "#2d2d2d"
+        primary: "#002c6e",
+        secondary: "gray"
     }
 }
 

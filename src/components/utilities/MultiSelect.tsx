@@ -14,9 +14,10 @@ type MultiSelectProps = {
         visible: boolean
         text: string
     }
+    value?: string[]
 }
 
-const MultiSelect = ({ options, onChange, label }: MultiSelectProps) => {
+const MultiSelect = ({ options, onChange, label, value }: MultiSelectProps) => {
     const [selected, setSelected] = useState<MultiSelectValues>([])
     const [showDropdown, setShowDropdown] = useState<boolean>(false)
     const ref = useRef<HTMLDivElement>(null)
@@ -45,19 +46,23 @@ const MultiSelect = ({ options, onChange, label }: MultiSelectProps) => {
     }, [])
 
     useEffect(() => {
+        setSelected(value || [])
+    }, [value])
+
+    useEffect(() => {
         onChange(selected)
     }, [selected])
 
     const handleMultiSelection = ({ target }: any) => {
-        const { value } = target
+        const val = target.value
 
         target.checked === false
-            ? handleRemove(value)
-            : setSelected([...selected, value])
+            ? handleRemove(val)
+            : setSelected([...selected, val])
     }
 
-    const handleRemove = (value: string) => {
-        setSelected([...selected].filter((val) => val !== value))
+    const handleRemove = (v: string) => {
+        setSelected([...selected].filter((val) => val !== v))
     }
 
     return (
@@ -71,9 +76,14 @@ const MultiSelect = ({ options, onChange, label }: MultiSelectProps) => {
                     className="ms-selected"
                 >
                     <div className="shards">
-                        {selected.map((item) => (
-                            <Shard onDelete={handleRemove} value={item} />
-                        ))}
+                        {value &&
+                            value.map((item) => (
+                                <Shard
+                                    key={`shard-${item}`}
+                                    onDelete={handleRemove}
+                                    value={item}
+                                />
+                            ))}
                     </div>
                 </button>
                 <motion.div
@@ -94,7 +104,10 @@ const MultiSelect = ({ options, onChange, label }: MultiSelectProps) => {
                                 }}
                                 name={option}
                                 value={option}
-                                checked={selected.includes(option)}
+                                checked={
+                                    Array.isArray(value) &&
+                                    value.includes(option)
+                                }
                             />
                         )
                     })}
@@ -109,7 +122,7 @@ const StyledMultiSelect = styled.div`
     flex-flow: column;
 
     #multiselect-label {
-        color: ${({ theme }) => theme.colors.white};
+        color: ${({ theme }) => theme.colors.text.hard};
         margin: 0;
     }
 

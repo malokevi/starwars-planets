@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "DistantGalaxy";
+    font-weight: 400;
+    src: url("./fonts/DistantGalaxy.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "LibreFranklin";
+    font-weight: 400;
+    src: url("./fonts/LibreFranklin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 400;
+    src: url("./fonts/poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 700;
+    src: url("./fonts/poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 900;
+    src: url("./fonts/poppins/Poppins-ExtraBold.ttf") format("truetype");
+}

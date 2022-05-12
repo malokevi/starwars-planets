@@ -22,11 +22,13 @@ const Home = () => {
         const filtered = filters
             ? planetData.filter(({ name, climate, terrain }) => {
                   return (
-                      (typeof filters.text === "undefined" ||
+                      (typeof filters.name === "undefined" ||
+                          filters.name.toLowerCase() === "all" ||
                           name
                               .toLowerCase()
-                              .includes(filters.text.toLowerCase() || "")) &&
+                              .includes(filters.name.toLowerCase() || "")) &&
                       (typeof filters.climate === "undefined" ||
+                          filters.climate.toLowerCase() === "all" ||
                           climate
                               .toLowerCase()
                               .includes(filters.climate.toLowerCase() || "")) &&

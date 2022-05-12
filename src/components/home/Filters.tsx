@@ -5,8 +5,14 @@ import MultiSelect from "../utilities/MultiSelect"
 import Select from "../utilities/Select"
 import { PlanetType } from "./PlanetGrid"
 
+const initFilters = {
+    name: undefined,
+    climate: undefined,
+    terrain: undefined
+}
+
 export type FilterDataType = {
-    text?: string
+    name?: string
     climate?: string
     terrain?: string[]
 }
@@ -20,11 +26,7 @@ type FiltersProps = {
 const Filters = ({ planets, onChange, children }: FiltersProps) => {
     const [selectData, setSelectData] = useState<Set<string>>(new Set())
     const [multiData, setMultiData] = useState<Set<string>>(new Set())
-    const [filters, setFilters] = useState<FilterDataType>({
-        text: "",
-        climate: "",
-        terrain: []
-    })
+    const [filters, setFilters] = useState<FilterDataType>(initFilters)
 
     useEffect(() => {
         onChange(filters)
@@ -39,7 +41,18 @@ const Filters = ({ planets, onChange, children }: FiltersProps) => {
 
     return (
         <StyledFilters>
-            <h2>Filters</h2>
+            <div className="filters-heading">
+                <h2>Filters</h2>
+                <button
+                    type="button"
+                    onClick={() => {
+                        setFilters(initFilters)
+                    }}
+                    className="button-reset"
+                >
+                    Clear all
+                </button>
+            </div>
 
             <div>
                 <Input
@@ -50,12 +63,13 @@ const Filters = ({ planets, onChange, children }: FiltersProps) => {
                     onChange={({ target }: any) =>
                         setFilters({
                             ...filters,
-                            text:
+                            name:
                                 target.value.length > 0
                                     ? target.value
                                     : undefined
                         })
                     }
+                    value={filters.name}
                     name="textfilter"
                 />
                 <Select
@@ -69,8 +83,9 @@ const Filters = ({ planets, onChange, children }: FiltersProps) => {
                             climate: value
                         })
                     }}
+                    value={filters.climate}
                     name="climateselect"
-                    options={Array.from(selectData)}
+                    options={["All", ...Array.from(selectData)]}
                 />
                 <MultiSelect
                     label={{
@@ -84,6 +99,7 @@ const Filters = ({ planets, onChange, children }: FiltersProps) => {
                         })
                     }}
                     options={Array.from(multiData)}
+                    value={filters.terrain}
                 />
                 {children}
             </div>
@@ -117,19 +133,34 @@ const StyledFilters = styled.div`
     position: sticky;
     top: 24px;
 
-    h2 {
-        color: white;
+    .filters-heading {
+        display: flex;
+        flex-flow: row nowrap;
         margin: 0 0 24px;
+
+        h2 {
+            margin: 0;
+            color: ${({ theme }) => theme.colors.text.hard};
+        }
+
+        button {
+            margin: auto 0 0 auto;
+            color: ${({ theme }) => theme.colors.text.hard};
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
-    & > div {
+    & > div:last-of-type {
         display: flex;
         flex-flow: column nowrap;
         gap: 18px;
     }
 
     label {
-        color: ${({ theme }) => theme.colors.white};
+        color: ${({ theme }) => theme.colors.text.hard};
     }
 
     .head {

@@ -42,7 +42,8 @@ const StyledCard = styled(motion.div)`
 
     .card-title {
         padding: 12px 24px;
-        background-color: #1a1a1a;
+        background-color: ${({ theme }) => theme.colors.secondary};
+        text-transform: uppercase;
 
         h2 {
             margin: 0;

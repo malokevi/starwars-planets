@@ -8,10 +8,11 @@ type SelectProps = {
         text: string
     }
     name: string
+    value?: string
     onChange: (e: any) => void
 }
 
-const Select = ({ options, label, name, onChange }: SelectProps) => {
+const Select = ({ options, label, name, onChange, value }: SelectProps) => {
     const id = useId()
     const { visible, text } = label
 
@@ -28,6 +29,7 @@ const Select = ({ options, label, name, onChange }: SelectProps) => {
                 id={id}
                 onChange={handleChange}
                 defaultValue={-1}
+                value={value || -1}
             >
                 {options.map((option) => {
                     return (
@@ -42,11 +44,16 @@ const Select = ({ options, label, name, onChange }: SelectProps) => {
 }
 
 const StyledSelect = styled.div`
+    label {
+        color: ${({ theme }) => theme.colors.text.hard};
+    }
+
     select {
         min-height: 36px;
         padding: 6px;
         width: 100%;
         cursor: pointer;
+        text-transform: capitalize;
     }
 `
 

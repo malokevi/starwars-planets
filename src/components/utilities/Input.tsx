@@ -8,9 +8,10 @@ type InputProps = {
     }
     name: string
     onChange: (e: any) => void
+    value?: string
 }
 
-const Input = ({ label, name, onChange }: InputProps) => {
+const Input = ({ label, name, onChange, value }: InputProps) => {
     const id = useId()
     const { text, visible } = label
 
@@ -23,6 +24,7 @@ const Input = ({ label, name, onChange }: InputProps) => {
                 id={id}
                 type="text"
                 name={name}
+                value={value || ""}
             />
         </StyledInput>
     )

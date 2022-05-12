@@ -23,7 +23,7 @@ const StyledFooter = styled.div`
 
     p {
         margin: auto;
-        color: ${({ theme }) => theme.colors.text.hard};
+        color: ${({ theme }) => theme.colors.white};
     }
 `
 

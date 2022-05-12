@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { Col, Container, Row } from "../utilities/Grid"
 import logo from "../../assets/images/star-wars-logo.png"
 import { Link } from "react-router-dom"
+import Toggle from "../utilities/Toggle"
 
 const Header = () => {
     return (
@@ -14,7 +15,7 @@ const Header = () => {
                         </Link>
                     </Col>
                     <Col lg={7} md={6} sm={9}>
-                        <p>Nav?</p>
+                        <Toggle />
                     </Col>
                 </Row>
             </Container>

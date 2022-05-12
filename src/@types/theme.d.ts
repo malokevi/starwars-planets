@@ -18,6 +18,7 @@ declare module "styled-components" {
             yellow: string
             boxShadow: string
             primary: string
+            secondary: string
         }
     }
 
