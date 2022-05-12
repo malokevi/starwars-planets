@@ -21,7 +21,7 @@ const Toggle = () => {
                 <motion.span
                     variants={{
                         active: {
-                            marginLeft: "70px"
+                            marginLeft: "50px"
                         },
                         inactive: {
                             marginLeft: 0
@@ -44,24 +44,29 @@ const StyledToggle = styled.div`
     display: flex;
     flex-flow: row nowrap;
     gap: 12px;
-    margin: auto 0 auto auto;
+    margin: 32px auto 0;
+
+    @media (min-width: 768px) {
+        margin: auto 0 auto auto;
+    }
 
     p {
+        margin: auto 0;
         color: ${({ theme }) => theme.colors.yellow};
     }
 
     & > button {
         display: flex;
         padding: 4px;
-        width: 120px;
+        width: 86px;
         background-color: #d1d1d1 !important;
         border-radius: 40px;
-        height: 48px;
+        height: 35px;
 
         span {
             display: block;
-            height: 40px;
-            width: 40px;
+            height: 28px;
+            width: 28px;
             border-radius: 100px;
             background-color: #3c3c3c;
         }

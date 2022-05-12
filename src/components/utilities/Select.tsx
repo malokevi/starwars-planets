@@ -28,7 +28,6 @@ const Select = ({ options, label, name, onChange, value }: SelectProps) => {
                 name={name}
                 id={id}
                 onChange={handleChange}
-                defaultValue={-1}
                 value={value || -1}
             >
                 {options.map((option) => {
@@ -45,7 +44,7 @@ const Select = ({ options, label, name, onChange, value }: SelectProps) => {
 
 const StyledSelect = styled.div`
     label {
-        color: ${({ theme }) => theme.colors.text.hard};
+        color: ${({ theme }) => theme.colors.text.hard} !important;
     }
 
     select {

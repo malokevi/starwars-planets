@@ -25,7 +25,9 @@ export const Col = ({
 }) => {
     return (
         <StyledCol
-            className={`col col-sm-${sm} col-md-${md} col-lg-${lg} ${className}`}
+            className={`col col-sm-${sm} col-md-${md} col-lg-${lg} ${
+                className || ""
+            }`}
         >
             {children && children}
         </StyledCol>

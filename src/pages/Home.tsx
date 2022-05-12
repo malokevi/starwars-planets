@@ -144,6 +144,10 @@ const StyledHome = styled.div`
 
     .grid-filters {
         gap: 18px;
+
+        @media (max-width: 767px) {
+            margin-bottom: 32px;
+        }
     }
 `
 

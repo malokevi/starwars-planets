@@ -139,6 +139,7 @@ const StyledMultiSelect = styled.div`
             height: auto;
             min-height: 36px;
             border: 1px solid gray;
+            border-bottom: none;
 
             .shards {
                 display: flex;
@@ -164,9 +165,8 @@ const StyledMultiSelect = styled.div`
             background-color: white;
             max-height: 300px;
             overflow: auto;
-            border-bottom: 1px solid gray;
-            border-left: 1px solid gray;
-            border-right: 1px solid gray;
+            border: 1px solid gray;
+            border-top: none;
 
             label {
                 padding: 4px 6px;

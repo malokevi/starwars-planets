@@ -9,12 +9,12 @@ const Header = () => {
         <StyledHeader>
             <Container>
                 <Row>
-                    <Col lg={5} md={6} sm={3}>
+                    <Col lg={5} md={6} sm={12}>
                         <Link to="">
                             <img className="logo" src={logo} alt="" />
                         </Link>
                     </Col>
-                    <Col lg={7} md={6} sm={9}>
+                    <Col lg={7} md={6} sm={12}>
                         <Toggle />
                     </Col>
                 </Row>
@@ -36,7 +36,11 @@ const StyledHeader = styled.div`
     .logo {
         width: 100%;
         max-width: 200px;
-        margin: auto auto auto 0;
+        margin: 0 auto 0;
+
+        @media (min-width: 768px) {
+            margin: auto auto auto 0;
+        }
     }
 `
 

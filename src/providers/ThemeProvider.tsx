@@ -1,7 +1,6 @@
 import theme from "../theme/defaultTheme"
 import { ThemeProvider as StyledComponentsThemeProvider } from "styled-components"
 import { useAppSelector } from "../hooks/store"
-import GlobalFonts from "../theme/globalFonts"
 import GlobalStyles from "../theme/globalStyles"
 import { useEffect, useState } from "react"
 import lightTheme from "../theme/lightTheme"
@@ -21,7 +20,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
             darkMode
                 ? {
                       ...theme,
-                      stars: background,
+                      stars: true,
                       planetPan: planetPan
                   }
                 : {

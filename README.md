@@ -1,3 +1,7 @@
+# run the project
+-To run this project, run "yarn" from the root directory. This will install the dependencies.
+-Then run "yarn start"
+
 # Ledn Token Interview Challenge
 
 At Ledn, we are eager to find talented, resourceful, and passionate engineers to help us build the future of digital asset financial services. In light of this, we created a series of steps for us to know each other. One of these is a take home challenge, which will take a few hours to complete.
